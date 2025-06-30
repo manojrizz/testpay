@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Payment Method</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 40px 32px;
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            color: #333;
+        }
+        .amount {
+            text-align: center;
+            font-size: 1.3em;
+            margin-bottom: 32px;
+            color: #007bff;
+        }
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .pay-option {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #f0f4f8;
+            border-radius: 8px;
+            padding: 14px 18px;
+            cursor: pointer;
+            transition: background 0.2s;
+            border: none;
+            font-size: 1.1em;
+        }
+        .pay-option:hover {
+            background: #e2e8f0;
+        }
+        .pay-icon {
+            width: 32px;
+            height: 32px;
+        }
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        let paymentAmount = 50;
+        let upiLink = '';
+        
+        function initializePayment() {
+            // Get amount from localStorage
+            const storedAmount = localStorage.getItem('payment_amount');
+            if (storedAmount) {
+                paymentAmount = parseInt(storedAmount);
+                // Clear the stored amount
+                localStorage.removeItem('payment_amount');
+            }
+            
+            // Ensure minimum amount
+            if (paymentAmount < 50) {
+                paymentAmount = 50;
+            }
+            
+            // Update the amount display
+            document.getElementById('amount-display').textContent = '₹' + paymentAmount;
+            
+            // Generate UPI link
+            const payee_vpa = 'your-upi-id@okicici'; // Replace with your UPI ID
+            const payee_name = 'Your Name'; // Replace with your name
+            const txn_note = 'Payment for Service';
+            
+            upiLink = 'upi://pay?pa=' + encodeURIComponent(payee_vpa) + 
+                     '&pn=' + encodeURIComponent(payee_name) + 
+                     '&am=' + paymentAmount + 
+                     '&tn=' + encodeURIComponent(txn_note) + 
+                     '&cu=INR';
+        }
+        
+        function payWith(app) {
+            if (!upiLink) {
+                alert('Payment link not available. Please try again.');
+                return;
+            }
+            
+            let finalLink = upiLink;
+            if (app === 'paytm') {
+                finalLink = upiLink + '&pn=Paytm';
+            } else if (app === 'phonepe') {
+                finalLink = upiLink + '&pn=PhonePe';
+            } else if (app === 'gpay') {
+                finalLink = upiLink + '&pn=GooglePay';
+            }
+            
+            window.location.href = finalLink;
+        }
+        
+        // Initialize when page loads
+        window.onload = initializePayment;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Select Payment Method</h2>
+        <div class="amount">Amount to Pay: <b id="amount-display">₹50</b></div>
+        <div class="payment-options">
+            <button class="pay-option" onclick="payWith('paytm')">
+                <img class="pay-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/55/Paytm_logo.png" alt="Paytm">Paytm
+            </button>
+            <button class="pay-option" onclick="payWith('phonepe')">
+                <img class="pay-icon" src="https://upload.wikimedia.org/wikipedia/commons/f/f0/PhonePe-Logo.png" alt="PhonePe">PhonePe
+            </button>
+            <button class="pay-option" onclick="payWith('gpay')">
+                <img class="pay-icon" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Google_Pay_Logo.svg" alt="GPay">GPay
+            </button>
+        </div>
+        <a href="index.html" class="back-btn">← Back to Plans</a>
+    </div>
+</body>
+</html> 
