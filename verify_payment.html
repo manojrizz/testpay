@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Payment</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 40px 32px;
+            max-width: 500px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 32px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .submit-btn:hover {
+            background: #218838;
+        }
+        .info-box {
+            background: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+        .info-box h3 {
+            margin: 0 0 12px 0;
+            color: #0056b3;
+        }
+        .info-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .info-box li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Verify Your Payment</h2>
+        
+        <div class="info-box">
+            <h3>📋 How to find your payment details:</h3>
+            <ul>
+                <li><strong>UPI Transaction ID:</strong> Found in your payment app (Paytm/PhonePe/GPay)</li>
+                <li><strong>Bank Reference Number:</strong> From your bank SMS or statement</li>
+                <li><strong>Amount:</strong> The exact amount you paid</li>
+                <li><strong>Date & Time:</strong> When you made the payment</li>
+            </ul>
+        </div>
+
+        <form action="process_verification.php" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="amount">Amount Paid (₹) *</label>
+                <input type="number" id="amount" name="amount" min="1" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="payment_method">Payment Method *</label>
+                <select id="payment_method" name="payment_method" required>
+                    <option value="">Select payment method</option>
+                    <option value="paytm">Paytm</option>
+                    <option value="phonepe">PhonePe</option>
+                    <option value="gpay">Google Pay</option>
+                    <option value="other">Other UPI App</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="transaction_id">Transaction ID/Reference Number *</label>
+                <input type="text" id="transaction_id" name="transaction_id" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="payment_date">Payment Date & Time *</label>
+                <input type="datetime-local" id="payment_date" name="payment_date" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="screenshot">Screenshot/Proof (Optional)</label>
+                <input type="file" id="screenshot" name="screenshot" accept="image/*">
+            </div>
+            
+            <div class="form-group">
+                <label for="notes">Additional Notes (Optional)</label>
+                <textarea id="notes" name="notes" placeholder="Any additional information about your payment..."></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit for Verification</button>
+        </form>
+    </div>
+</body>
+</html> 

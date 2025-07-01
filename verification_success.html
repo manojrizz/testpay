@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Submitted</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 40px 32px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #28a745;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: white;
+            font-size: 40px;
+        }
+        h2 {
+            color: #28a745;
+            margin-bottom: 16px;
+        }
+        .verification-id {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 20px 0;
+            font-family: monospace;
+            font-size: 1.1em;
+            color: #495057;
+        }
+        .info-box {
+            background: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+            text-align: left;
+        }
+        .info-box h3 {
+            margin: 0 0 12px 0;
+            color: #0056b3;
+        }
+        .info-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .info-box li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 8px;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .btn-secondary {
+            background: #6c757d;
+        }
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-icon">✓</div>
+        <h2>Verification Submitted Successfully!</h2>
+        <p>Your payment verification request has been submitted. We'll verify your payment and contact you within 24 hours.</p>
+        
+        <div class="verification-id" id="verificationId">
+            Loading verification ID...
+        </div>
+        
+        <div class="info-box">
+            <h3>📧 What happens next?</h3>
+            <ul>
+                <li>You'll receive a confirmation email with your verification details</li>
+                <li>We'll check your payment against our records</li>
+                <li>You'll be notified via email once verification is complete</li>
+                <li>If verified, your service will be activated immediately</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h3>📞 Need help?</h3>
+            <ul>
+                <li>Email: support@yoursite.com</li>
+                <li>Phone: +91-XXXXXXXXXX</li>
+                <li>Response time: Within 24 hours</li>
+            </ul>
+        </div>
+        
+        <div style="margin-top: 32px;">
+            <a href="index.html" class="btn">Back to Home</a>
+            <a href="verify_payment.html" class="btn btn-secondary">Submit Another Payment</a>
+        </div>
+    </div>
+
+    <script>
+        // Get verification ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const verificationId = urlParams.get('id');
+        
+        if (verificationId) {
+            document.getElementById('verificationId').textContent = 'Verification ID: ' + verificationId;
+        } else {
+            document.getElementById('verificationId').textContent = 'Verification ID: Not available';
+        }
+    </script>
+</body>
+</html> 
