@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aliya Book Publication | Reviews</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to right, #232526, #414345);
+      color: #fff;
+    }
+    header {
+      padding: 60px 20px 20px;
+      text-align: center;
+      background: #141e30;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      font-size: 36px;
+      color: #00ffcc;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 18px;
+      color: #ccc;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 30px;
+    }
+    .card {
+      background: #1c1c2c;
+      padding: 25px;
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,255,204,0.15);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      transform-style: preserve-3d;
+    }
+    .card:hover {
+      transform: rotateY(5deg) scale(1.03);
+      box-shadow: 0 15px 25px rgba(0,255,204,0.25);
+    }
+    .card h3 {
+      color: #00ffcc;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #e0e0e0;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      background: #101010;
+      font-size: 14px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>What People Say About Aliya Book Publication</h1>
+  <p>Real feedback from our handwriting job participants!</p>
+</header>
+
+<div class="container">
+  <!-- Start of Review Cards -->
+  <div class="card"><h3>Sarah M.</h3><p>This job was exactly what I needed. Flexible hours and fast payments. Highly recommended!</p></div>
+  <div class="card"><h3>Ali R.</h3><p>I was skeptical at first but now I’m earning from home by writing. Thank you, Aliya Publications!</p></div>
+  <div class="card"><h3>Priya K.</h3><p>Great opportunity, very supportive team. The writing work is simple and clear.</p></div>
+  <div class="card"><h3>Ashok P.</h3><p>I got paid every Friday without any issues. Legit and professional.</p></div>
+  <div class="card"><h3>Fatima B.</h3><p>I enjoy the peaceful nature of handwriting jobs. Best thing I did in 2025!</p></div>
+  <div class="card"><h3>Ravi S.</h3><p>Work from home jobs like this are rare. Thank you for helping me earn extra!</p></div>
+  <div class="card"><h3>Meera T.</h3><p>Professional system and well-organized task instructions. Super easy to follow.</p></div>
+  <div class="card"><h3>Nikhil D.</h3><p>Highly trusted company. I’ve recommended it to my cousins too.</p></div>
+  <div class="card"><h3>Simran G.</h3><p>I can work at night after kids sleep. Thank you, Aliya Book Publication!</p></div>
+  <div class="card"><h3>Amit K.</h3><p>No hidden fees, no delays, and full support from day one. 5 stars!</p></div>
+  <div class="card"><h3>Neha L.</h3><p>This handwriting job helped me pay for my online course. Grateful!</p></div>
+  <div class="card"><h3>Arjun R.</h3><p>Simple tasks with real payout. I was surprised how smooth it is.</p></div>
+  <div class="card"><h3>Sonali D.</h3><p>Thank you for giving students like me a real side income.</p></div>
+  <div class="card"><h3>Rehan M.</h3><p>All work is provided on time and payment is always prompt.</p></div>
+  <div class="card"><h3>Sana A.</h3><p>This is my 4th week and I’m already loving the process!</p></div>
+  <div class="card"><h3>Mohit V.</h3><p>It’s easy, reliable and flexible. You won’t regret it.</p></div>
+  <div class="card"><h3>Divya B.</h3><p>From application to payment, everything was handled perfectly.</p></div>
+  <div class="card"><h3>Krishna T.</h3><p>Aliya team is very responsive on WhatsApp and email. Great experience.</p></div>
+  <div class="card"><h3>Rajesh P.</h3><p>Love the fact that I can earn just by writing. Super helpful!</p></div>
+  <div class="card"><h3>Tanvi N.</h3><p>This is a blessing for housewives like me. Total satisfaction!</p></div>
+  <div class="card"><h3>Karan M.</h3><p>Legit company with clear instructions. I already got 2 payments.</p></div>
+  <div class="card"><h3>Ayesha Z.</h3><p>I joined last month and got paid already. Trustworthy and fast.</p></div>
+  <div class="card"><h3>Vikram J.</h3><p>Writing by hand never felt so rewarding. Keep it up!</p></div>
+  <div class="card"><h3>Jasleen C.</h3><p>One of the best WFH jobs I’ve seen online. And real payments too!</p></div>
+  <div class="card"><h3>Irfan K.</h3><p>Aliya Publications has helped me build a side hustle from nothing.</p></div>
+  <div class="card"><h3>Shalini P.</h3><p>The best part is — no need for a laptop. Just paper and pen!</p></div>
+  <div class="card"><h3>Dhruv S.</h3><p>Very well-managed work system. I never felt confused.</p></div>
+  <div class="card"><h3>Nida M.</h3><p>I started last month and already told 3 friends to join. It’s amazing!</p></div>
+  <div class="card"><h3>Manoj A.</h3><p>Thanks to Aliya, I’m finally working from home and earning safely.</p></div>
+  <!-- End of Reviews -->
+</div>
+
+<footer>
+  &copy; 2025 Aliya Book Publication | All rights reserved. | Made with ❤️ for writers.
+</footer>
+
+</body>
+</html>
